@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfApp.MainWindow" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        Title="Пример WPF приложения" Height="350" Width="525">
+    <Grid>
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="_Файл">
+                <MenuItem Header="_Сменить фон" Click="ChangeBackground_Click" ToolTip="Изменить фон окна"/>
+                <MenuItem Header="_Информация о разработчике" Click="AboutDeveloper_Click" ToolTip="Получить информацию о разработчике"/>
+                <MenuItem Header="_Выход" Click="Exit_Click" ToolTip="Закрыть приложение"/>
+            </MenuItem>
+        </Menu>
+
+        <ToolBar DockPanel.Dock="Top" Margin="0,23,0,212">
+            <Button Name="btnChangeBackground" Click="ChangeBackground_Click" ToolTip="Изменить фон окна">Сменить фон</Button>
+            <Button Name="btnAboutDeveloper" Click="AboutDeveloper_Click" ToolTip="Получить информацию о разработчике">Инфо о разработчике</Button>
+            <Button Name="btnExit" Click="Exit_Click" ToolTip="Закрыть приложение">Выход</Button>
+        </ToolBar>
+
+        <StatusBar DockPanel.Dock="Bottom" Margin="0,274,0,0">
+            <TextBlock Name="statusText" Text="Готов" />
+        </StatusBar>
+    </Grid>
+</Window>
