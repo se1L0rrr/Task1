@@ -1,0 +1,37 @@
+﻿<Window x:Class="WpfApp27.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp27"
+        mc:Ignorable="d"
+        Title="Графический редактор" Height="600" Width="800" 
+        Background="White">
+    <Grid>
+        <Canvas Name="DrawingCanvas" Background="White"  
+                MouseDown="DrawingCanvas_MouseDown"  
+                MouseMove="DrawingCanvas_MouseMove"  
+                MouseUp="DrawingCanvas_MouseUp" />
+
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10">
+            <TextBlock Text="Выбор цвета:" FontWeight="Bold" FontSize="15" />
+            <ComboBox x:Name="ColorComboBox" SelectionChanged="ColorComboBox_SelectionChanged" Width="150">
+                <ComboBoxItem Tag="Black" Content="Черный" />
+                <ComboBoxItem Tag="Green" Content="Зеленый" />
+                <ComboBoxItem Tag="Blue" Content="Синий" />
+                <ComboBoxItem Tag="Brown" Content="Коричневый" />
+                <ComboBoxItem Tag="Red" Content="Красный" />
+                <ComboBoxItem Tag="Yellow" Content="Желтый" />
+            </ComboBox>
+            <TextBlock x:Name="BrushSizeTextBlock" Text="Размер кисти:" Margin="0,10,0,0" FontWeight="Bold" />
+            <Slider Name="BrushSizeSlider" Minimum="1" Maximum="20" Value="20"  
+                    ValueChanged="BrushSizeSlider_ValueChanged" Width="200" />
+
+            <RadioButton Name="EraseButton" Content="Редактирование" Width="150" Margin="0,10,0,0"  
+                    Click="EraseButton_Click" />
+            <RadioButton Name="ClearButton" Content="Удаление" Width="150" Margin="0,10,0,0"  
+                    Click="ClearButton_Click" />
+        </StackPanel>
+    </Grid>
+</Window> 
+        
